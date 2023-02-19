@@ -9,14 +9,25 @@
 
 @interface ViewController ()
 
+@property(nonatomic,strong)UIScrollView *scrollview;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   
+    [self.view addSubview:self.scrollview];
 }
 
+
+-(UIScrollView *)scrollview {
+    if(_scrollview == nil){
+        _scrollview = [[UIScrollView alloc]initWithFrame:CGRectMake(10, 100, 300, 600)];
+        _scrollview.backgroundColor = UIColor.grayColor;
+    }
+    return _scrollview;
+}
 
 @end
